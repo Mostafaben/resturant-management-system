@@ -1,0 +1,25 @@
+.card {
+  i {
+    height: 38px;
+    width: 38px;
+    border-radius: 38px;
+    color: white;
+    position: absolute;
+    right: 16px;
+  }
+
+  .fa-level-up-alt {
+    background-color: rgba(27, 184, 27, 0.432);
+  }
+  .fa-level-down-alt {
+    background-color: rgba(252, 35, 35, 0.438);
+  }
+
+  h4 {
+    color: rgba(252, 35, 35, 0.438);
+  }
+}
+
+.padding {
+  padding: 16px;
+}

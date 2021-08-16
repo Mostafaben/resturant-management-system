@@ -1,0 +1,45 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">Recent Orders</p>
+    <button class="button is-primary">View All</button>
+  </header>
+  <div class="card-content">
+    <div class="table">
+      <div class="table-header table-row">
+        <div class="table-item">
+          <p>Food Item</p>
+        </div>
+        <div class="table-item">
+          <p>Price</p>
+        </div>
+        <div class="table-item center_content">
+          <p>State</p>
+        </div>
+      </div>
+      <div class="table-row" *ngFor="let order of recentOrders">
+        <div class="table-item is-row center-vertical">
+          <figure class="image is-48x48 is-row">
+            <img
+              class="is-rounded"
+              [src]="'https://picsum.photos/400'"
+              [alt]="order.foodName"
+            />
+          </figure>
+          <p style="margin-left: 16px">Food Name</p>
+        </div>
+        <div class="table-item">
+          <h6 class="title is-6">{{ order.price }} DA</h6>
+        </div>
+        <div class="table-item center_content">
+          <span
+            class="tag"
+            [class.is-primary]="order.state == 0"
+            [class.is-danger]="order.state == 2"
+            [class.is-Light]="order.state == 1"
+            >{{ orderStates[order.state] }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

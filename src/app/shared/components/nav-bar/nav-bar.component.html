@@ -1,0 +1,22 @@
+<nav [class.full_width]="!isSideMenuOpen">
+  <i class="fas fa-bars" (click)="handleToggleSideMenu()"></i>
+  <div class="field">
+    <p class="control has-icons-right">
+      <input class="input" type="search" placeholder="search..." />
+      <span class="icon is-small is-right">
+        <i class="fas fa-search"></i>
+      </span>
+    </p>
+  </div>
+
+  <i class="far fa-envelope"></i>
+  <i class="far fa-bell"></i>
+
+  <figure class="image is-48x48">
+    <img class="is-rounded" src="https://picsum.photos/400" alt="" />
+  </figure>
+  <div class="user">
+    <p>User Name</p>
+    <span>fm_benlagha@esi.dz</span>
+  </div>
+</nav>

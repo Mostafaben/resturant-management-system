@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column" *ngFor="let item of statistics">
+    <app-statistics-card [item]="item"></app-statistics-card>
+  </div>
+</div>
+
+<div class="columns is-multiline">
+  <div class="column is-half">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Clients</p>
+      </header>
+      <div class="card-content" style="height: 422px"></div>
+    </div>
+  </div>
+  <div class="column is-half">
+    <app-recent-orders-list
+      [recentOrders]="recentOrders"
+      [orderStates]="orderStates"
+    ></app-recent-orders-list>
+  </div>
+  <div class="column is-full">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Trending Orders</p>
+      </header>
+      <div class="card-content"></div>
+    </div>
+  </div>
+</div>
