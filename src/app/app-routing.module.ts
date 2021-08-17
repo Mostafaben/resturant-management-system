@@ -11,6 +11,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'menu',
+    loadChildren: () =>
+      import('./modules/menu/menu.module').then((module) => module.MenuModule),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

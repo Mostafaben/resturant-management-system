@@ -1,0 +1,17 @@
+.card {
+  cursor: pointer;
+  .media {
+    position: relative;
+
+    .tag {
+      position: absolute;
+      right: 0px;
+    }
+  }
+  .status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,19 @@
+<h1 class="title is-3">Menu</h1>
+<div class="card">
+  <div class="card-content">
+    <div class="field">
+      <p class="control has-icons-right">
+        <input class="input" type="search" placeholder="search..." />
+        <span class="icon is-small is-right">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+    </div>
+    <button class="button is-primary">Filter</button>
+  </div>
+</div>
+<div class="columns is-multiline">
+  <div class="column is-3" *ngFor="let foodItem of food">
+    <app-food-menu-card [food]="foodItem"></app-food-menu-card>
+  </div>
+</div>

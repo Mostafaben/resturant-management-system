@@ -10,7 +10,9 @@
       <header class="card-header">
         <p class="card-header-title">Clients</p>
       </header>
-      <div class="card-content" style="height: 422px"></div>
+      <div class="card-content" style="height: 422px">
+        <app-clients-chart [data]="clientsData"></app-clients-chart>
+      </div>
     </div>
   </div>
   <div class="column is-half">
@@ -24,7 +26,13 @@
       <header class="card-header">
         <p class="card-header-title">Trending Orders</p>
       </header>
-      <div class="card-content"></div>
+      <div class="card-content">
+        <div class="columns">
+          <div class="column is-3" *ngFor="let food of trendingFood">
+            <app-food-card [food]="food"></app-food-card>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

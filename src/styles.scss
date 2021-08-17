@@ -18,6 +18,7 @@ body {
   margin: 0px;
   background-color: var(--bg-color);
   position: relative;
+  overflow: hidden;
 }
 
 .shadow {
@@ -27,14 +28,19 @@ body {
 .page_container {
   transition-duration: 200ms;
   padding: 20px;
+  padding-top: 100px;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 button,
-i {
+i,
+.is_clickable {
   transition-duration: 200ms;
 }
 
 button:active,
+.is_clickable:active,
 i:active {
   transform: scale(0.95);
   box-shadow: 1px 2px 4px #ddd;

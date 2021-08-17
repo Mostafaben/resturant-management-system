@@ -1,0 +1,19 @@
+.toggle_container {
+  width: 40px;
+  height: 24px;
+  background-color: #ddd;
+  padding: 4px;
+  border-radius: 20px;
+  display: block;
+  cursor: pointer;
+  .circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    background-color: white;
+    transition-duration: 200ms;
+  }
+  .is_on {
+    transform: translateX(16px);
+  }
+}

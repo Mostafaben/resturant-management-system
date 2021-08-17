@@ -38,7 +38,7 @@ export class SideMenuComponent implements OnInit {
     },
     {
       name: 'Menus',
-      url: '/menus',
+      url: '/menu',
       icon: 'fa-file-alt',
       subSections: [],
     },
