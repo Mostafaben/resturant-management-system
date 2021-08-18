@@ -1,5 +1,6 @@
 import { IStatistic } from '../modules/analytics/interfaces/statistic.interface';
 import { IFood, IFoodDetails } from '../shared/interfaces/food.interface';
+import { IOrder } from '../shared/interfaces/order.interface';
 
 export const recentOrders: any[] = [
   {
@@ -86,7 +87,8 @@ export const trendingFood: IFood[] = [
     price: 140,
     foodName: 'Pizza Fromage',
     category: { id: 1, name: 'Pizza' },
-    imageUrl: 'https://picsum.photos/400',
+    imageUrl:
+      'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
   },
   {
     id: 1,
@@ -94,7 +96,8 @@ export const trendingFood: IFood[] = [
     price: 140,
     foodName: 'Pizza Fromage',
     category: { id: 1, name: 'Pizza' },
-    imageUrl: 'https://picsum.photos/400',
+    imageUrl:
+      'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
   },
   {
     id: 1,
@@ -102,7 +105,8 @@ export const trendingFood: IFood[] = [
     price: 140,
     foodName: 'Pizza Fromage',
     category: { id: 1, name: 'Pizza' },
-    imageUrl: 'https://picsum.photos/400',
+    imageUrl:
+      'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
   },
   {
     id: 1,
@@ -110,7 +114,8 @@ export const trendingFood: IFood[] = [
     price: 140,
     foodName: 'Pizza Fromage',
     category: { id: 1, name: 'Pizza' },
-    imageUrl: 'https://picsum.photos/400',
+    imageUrl:
+      'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
   },
 ];
 
@@ -124,4 +129,53 @@ let food: IFoodDetails[] = trendingFood.map((food) => ({
 
 food = [...food, ...food];
 
-export { food };
+const orders: IOrder[] = new Array(7)
+  .fill({
+    client: {
+      email: 'fm_benlagha@esi.dz',
+      id: 1,
+      imageUrl:
+        'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
+      firstName: 'Mostapha',
+      lastName: 'BENLAGHA',
+      phoneNumber: '0795836081',
+    },
+    address: {
+      address: 'Babzouar, 22',
+      id: 1,
+      wilaya: {
+        id: 16,
+        name: 'Alger',
+      },
+    },
+    foodItems: [
+      {
+        food: food[0],
+        qte: 10,
+      },
+      {
+        food: food[0],
+        qte: 10,
+      },
+      {
+        food: food[0],
+        qte: 10,
+      },
+      {
+        food: food[0],
+        qte: 10,
+      },
+    ],
+    id: 1,
+    inTable: true,
+    state: 0,
+    totalPrice: 1200,
+    createdAt: new Date(),
+  })
+  .map((order) => ({
+    ...order,
+    state: Math.floor(Math.random() * 4),
+    id: Math.floor(Math.random() * 100),
+  }));
+
+export { food, orders };

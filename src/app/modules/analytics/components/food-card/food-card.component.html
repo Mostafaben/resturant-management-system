@@ -5,12 +5,16 @@
     </figure>
   </div>
   <div class="card-content">
+    <span class="tag is-danger">{{ food.price }} DA</span>
     <div class="media">
       <div class="media-content">
         <p class="title is-5">{{ food.foodName }}</p>
         <p class="subtitle is-6">{{ food.category.name }}</p>
       </div>
     </div>
-    <h5 class="title is-4">{{ food.price }} DA</h5>
+    <div class="is-row center-vertical space-between">
+      <p>Available:</p>
+      <app-toggle-switch [state]="true"></app-toggle-switch>
+    </div>
   </div>
 </div>

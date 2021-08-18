@@ -10,4 +10,5 @@ export interface IOrder {
   inTable: boolean;
   client: IClient;
   address: IAddress;
+  createdAt: Date;
 }

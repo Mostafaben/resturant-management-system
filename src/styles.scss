@@ -106,6 +106,7 @@ i:active {
   .table-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 16px;
     cursor: pointer;
@@ -135,6 +136,10 @@ i:active {
     .fa-times {
       display: block !important;
     }
+  }
+
+  .table-item {
+    flex: 4 !important;
   }
 
   nav {
@@ -168,4 +173,24 @@ i:active {
 }
 .margin-left {
   margin-left: 20px;
+}
+
+.margin-vertical {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+img {
+  object-fit: cover;
+}
+
+.is-64x64 {
+  img {
+    height: 64px;
+    width: 64px;
+  }
 }

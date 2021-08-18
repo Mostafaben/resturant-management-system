@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ChartsModule } from '@rinminase/ng-charts';
 import { FoodCardComponent } from 'src/app/modules/analytics/components/food-card/food-card.component';
+import { MenuModule } from '../menu/menu.module';
 import { AnalyticsRoutingModule } from './analytics-routing.module';
 import { AnalyticsComponent } from './analytics.component';
 import { ClientsChartComponent } from './components/clients-chart/clients-chart.component';
@@ -16,6 +17,7 @@ import { StatisticsCardComponent } from './components/statistics-card/statistics
     ClientsChartComponent,
     FoodCardComponent,
   ],
-  imports: [CommonModule, AnalyticsRoutingModule, ChartsModule],
+  imports: [CommonModule, AnalyticsRoutingModule, ChartsModule, MenuModule],
+  exports: [StatisticsCardComponent],
 })
 export class AnalyticsModule {}
