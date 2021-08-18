@@ -1,12 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { toggleSideMenuAction } from '../actions/ui.action';
+import {
+  selectMenuItemAction,
+  toggleSideMenuAction,
+} from '../actions/ui.action';
 
 export interface IUiState {
   isSideMenuOpen: boolean;
+  selectedSideMenuItem: number;
 }
 
 const initialeState: IUiState = {
   isSideMenuOpen: true,
+  selectedSideMenuItem: 0,
 };
 
 const _uiReducer = createReducer(
@@ -14,6 +19,10 @@ const _uiReducer = createReducer(
   on(toggleSideMenuAction, (state, { isOpen }) => ({
     ...state,
     isSideMenuOpen: isOpen,
+  })),
+  on(selectMenuItemAction, (state, { selectedItem }) => ({
+    ...state,
+    selectedSideMenuItem: selectedItem,
   }))
 );
 

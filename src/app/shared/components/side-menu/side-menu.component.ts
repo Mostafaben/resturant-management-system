@@ -1,8 +1,13 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { IUiState } from 'src/app/state/reducers/ui.reducer';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import { IRoute } from '../../interfaces/route.interface';
 
 @Component({
@@ -20,51 +25,30 @@ import { IRoute } from '../../interfaces/route.interface';
         animate('200ms', style({ transform: 'translateX(-300px)' })),
       ]),
     ]),
+    trigger('listAnimation', [
+      transition(':enter', [
+        style({ height: 0, opacity: 0 }),
+        animate('100ms', style({})),
+      ]),
+      transition(':leave', [
+        style({}),
+        animate('100ms', style({ height: 0, opacity: 0 })),
+      ]),
+    ]),
   ],
 })
-export class SideMenuComponent implements OnInit {
-  readonly ROUTES: IRoute[] = [
-    {
-      name: 'Analytics',
-      url: '/',
-      icon: 'fa-chart-line',
-      subSections: [],
-    },
-    {
-      name: 'Invoice',
-      url: '/invoice',
-      icon: 'fa-coins',
-      subSections: [],
-    },
-    {
-      name: 'Menus',
-      url: '/menu',
-      icon: 'fa-file-alt',
-      subSections: [],
-    },
-    {
-      name: 'Orders',
-      url: '/orders',
-      icon: 'fa-box',
-      subSections: [],
-    },
-    {
-      name: 'Clients',
-      url: '/clients',
-      icon: 'fa-users',
-      subSections: [],
-    },
-    {
-      name: 'Settings',
-      url: '/settings',
-      icon: 'fa-cog',
-      subSections: ['Profile', 'Theme'],
-    },
-  ];
-
+export class SideMenuComponent implements OnInit, OnDestroy {
+  @Input() routes: IRoute[] = [];
+  @Input() selectedItem!: number;
   @Input() isSideMenuOpen: boolean = false;
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
+  constructor(private _router: Router) {}
+  ngOnDestroy(): void {}
 
   ngOnInit(): void {}
+
+  closeSideMenu() {
+    this.close.emit(true);
+  }
 }

@@ -63,6 +63,7 @@ i:active {
 
 .is-row {
   display: flex;
+  width: 100%;
   flex-direction: row;
 }
 
@@ -105,5 +106,24 @@ i:active {
   }
   .table-item {
     flex: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .side_menu {
+    position: absolute;
+    z-index: 10;
+
+    .fa-times {
+      display: block !important;
+    }
+  }
+
+  nav {
+    left: 0px !important;
+  }
+
+  .full_width {
+    margin-left: 0px !important;
   }
 }

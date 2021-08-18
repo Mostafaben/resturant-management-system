@@ -6,6 +6,7 @@
   border-radius: 20px;
   display: block;
   cursor: pointer;
+  transition-duration: 200ms;
   .circle {
     height: 16px;
     width: 16px;
@@ -13,7 +14,11 @@
     background-color: white;
     transition-duration: 200ms;
   }
-  .is_on {
+}
+
+.is_on {
+  background-color: red;
+  .circle {
     transform: translateX(16px);
   }
 }

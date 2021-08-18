@@ -1,22 +1,21 @@
 <div class="side_menu shadow" *ngIf="isSideMenuOpen" [@inOutAnimation]>
+  <i class="fas fa-times" (click)="closeSideMenu()"></i>
   <div class="header">
     <img src="./../../../../assets/images/logo.png" alt="" />
   </div>
-  <div class="content">
-    <div
-      class="item_container"
-      *ngFor="let route of ROUTES"
-      [routerLink]="route.url"
-    >
-      <div class="item">
-        <i [class]="'fas ' + route.icon"></i>
-        <span>{{ route.name }}</span>
-        <i class="fas fa-angle-down"></i>
-      </div>
-      <div class="list">
-        <div class="list_item" *ngFor="let item of route.subSections">
-          <p>{{ item }}</p>
-        </div>
+  <div
+    class="item_container"
+    *ngFor="let route of routes; let itemIndex = index"
+    [class.selected]="itemIndex == selectedItem"
+  >
+    <div class="item" [routerLink]="route.url">
+      <i [class]="'fas ' + route.icon"></i>
+      <span>{{ route.name }}</span>
+      <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="list" *ngIf="selectedItem == itemIndex" [@listAnimation]>
+      <div class="list_item" *ngFor="let item of route.subSections">
+        <p [routerLink]="route.url + '/' + item.url">{{ item.name }}</p>
       </div>
     </div>
   </div>

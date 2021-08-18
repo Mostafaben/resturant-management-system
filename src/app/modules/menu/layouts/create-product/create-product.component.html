@@ -1,0 +1,116 @@
+<div class="columns">
+  <div class="column is-7">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Add Product Form</p>
+      </header>
+      <div class="card-content">
+        <div>
+          <div class="is-row">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Food"
+                  required
+                  minlength="4"
+                  maxlength="100"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Category</label>
+              <div class="select">
+                <select value="0" required>
+                  <option value="0">Select Category</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="is-row">
+            <div class="field">
+              <label class="label">Price</label>
+              <input
+                type="number"
+                placeholder="0"
+                class="input"
+                required
+                min="0"
+              />
+            </div>
+            <div class="field">
+              <label class="label">Discount</label>
+              <input
+                type="number"
+                placeholder="0%"
+                class="input"
+                defaultValue="0"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Ingredients</label>
+            <div class="is-row">
+              <input
+                class="input"
+                type="text"
+                placeholder="new Ingredient"
+                style="margin-right: 20px"
+                maxlength="30"
+                minlength="3"
+                [(ngModel)]="ingredientInput"
+              />
+              <button class="button is-link" (click)="addNewIngredient()">
+                Add Ingredient
+              </button>
+            </div>
+          </div>
+          <div class="ingredients">
+            <span
+              class="tag is-danger"
+              *ngFor="let ingredient of ingredients; let i = index"
+              >{{ ingredient }}
+
+              <i class="fas fa-times" (click)="removeIngredient(i)"></i>
+            </span>
+          </div>
+
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <!-- <angular-editor placeholder="Enter text here..."></angular-editor> -->
+              <textarea
+                class="textarea"
+                placeholder="description"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a class="card-footer-item">Delete</a>
+        <a class="card-footer-item">Edit</a>
+        <a class="card-footer-item">Save</a>
+      </footer>
+    </div>
+  </div>
+  <div class="column is-5">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Images</p>
+      </header>
+      <div class="card-content">
+        <div class="img_container center_content">
+          <i class="fas fa-upload"></i>
+        </div>
+        <div class="images" *ngIf="false">
+          <p class="title is-6">Product Images</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

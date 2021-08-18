@@ -124,5 +124,4 @@ let food: IFoodDetails[] = trendingFood.map((food) => ({
 
 food = [...food, ...food];
 
-console.table(food);
 export { food };

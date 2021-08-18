@@ -2,9 +2,14 @@
   (toggleSideMenu)="toggleSideMenu()"
   [isSideMenuOpen]="isSideMenuOpen"
 ></app-nav-bar>
-<app-side-menu [isSideMenuOpen]="isSideMenuOpen"></app-side-menu>
+<app-side-menu
+  [routes]="ROUTES"
+  [isSideMenuOpen]="isSideMenuOpen"
+  [selectedItem]="sideMenuSelectedItem"
+  (close)="handleCloseSideMenu()"
+></app-side-menu>
 <div
-  class="page_container"
+  class="page_container full_width"
   [style.marginLeft]="isSideMenuOpen ? '300px' : '0px'"
 >
   <router-outlet></router-outlet>

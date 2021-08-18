@@ -4,7 +4,7 @@ import { AnalyticsComponent } from './modules/analytics/analytics.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'analytics',
     loadChildren: () =>
       import('./modules/analytics/analytics.module').then(
         (module) => module.AnalyticsModule
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'analytics',
   },
 ];
 

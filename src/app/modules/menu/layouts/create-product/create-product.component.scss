@@ -1,0 +1,40 @@
+.is-row {
+  .field {
+    flex: 1;
+    &:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.ingredients {
+  display: flex;
+  padding: 8px 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .tag {
+    margin-right: 10px;
+    margin-bottom: 8px;
+    .fa-times {
+      color: whitesmoke;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+$primary: hsl(171, 100%, 41%);
+
+.img_container {
+  height: 200px;
+  color: $primary;
+  border-radius: 8px;
+  border: 2px dashed $primary;
+  transition-duration: 200ms;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: rgba(245, 245, 245, 0.788);
+  }
+}
