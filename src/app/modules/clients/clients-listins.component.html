@@ -1,0 +1,31 @@
+<h1 class="title is-3">Clients</h1>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">Clients</p>
+    <div class="card-header-actions">
+      <div class="field margin-right">
+        <p class="control has-icons-right">
+          <input class="input" type="search" placeholder="search..." />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <button class="button is-primary">Filter Users</button>
+    </div>
+  </header>
+  <div class="card-content">
+    <div class="table">
+      <div class="table-row table-header">
+        <div class="table-item">Name</div>
+        <div class="table-item">Address</div>
+        <div class="table-item">Verified</div>
+        <div class="table-item">Signed up</div>
+      </div>
+      <app-client-list-item
+        [client]="client"
+        *ngFor="let client of clients"
+      ></app-client-list-item>
+    </div>
+  </div>
+</div>

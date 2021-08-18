@@ -1,0 +1,24 @@
+<div class="table-row">
+  <div class="table-item is-row center-vertical">
+    <figure class="image is-64x64 margin-right">
+      <img [src]="client.imageUrl" class="is-rounded" />
+    </figure>
+    <div class="infos is-column">
+      <strong>{{ client.firstName + " " + client.lastName }}</strong>
+      <span style="color: #888">{{ client.phoneNumber }}</span>
+    </div>
+  </div>
+  <div class="table-item flex">
+    <p>{{ client.address.address }} , {{ client.address.wilaya.name }}</p>
+  </div>
+  <div class="table-item">
+    <span
+      class="tag"
+      [class.is-primary]="client.isVerified"
+      [class.is-danger]="!client.isVerified"
+    >
+      {{ client.isVerified ? "Verified" : "Non Verified" }}
+    </span>
+  </div>
+  <div class="table-item">{{ client.createdAt | date: "short" }}</div>
+</div>

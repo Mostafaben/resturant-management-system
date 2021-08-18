@@ -11,7 +11,7 @@
     <div class="item" [routerLink]="route.url">
       <i [class]="'fas ' + route.icon"></i>
       <span>{{ route.name }}</span>
-      <i class="fas fa-angle-down"></i>
+      <i class="fas fa-angle-down" *ngIf="route.subSections.length > 0"></i>
     </div>
     <div class="list" *ngIf="selectedItem == itemIndex" [@listAnimation]>
       <div class="list_item" *ngFor="let item of route.subSections">

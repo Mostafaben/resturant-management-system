@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AnalyticsComponent } from './modules/analytics/analytics.component';
 
 const routes: Routes = [
   {
@@ -14,6 +13,27 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () =>
       import('./modules/menu/menu.module').then((module) => module.MenuModule),
+  },
+  {
+    path: 'clients',
+    loadChildren: () =>
+      import('./modules/clients/clients.module').then(
+        (module) => module.ClientsModule
+      ),
+  },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./modules/orders/orders.module').then(
+        (module) => module.OrdersModule
+      ),
+  },
+  {
+    path: 'invoice',
+    loadChildren: () =>
+      import('./modules/finance/finance.module').then(
+        (module) => module.FinanceModule
+      ),
   },
   {
     path: '**',
