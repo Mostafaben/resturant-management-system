@@ -19,7 +19,7 @@ export const ROUTES: IRoute[] = [
     icon: 'fa-coins',
     subSections: [
       { name: 'Available Subscriptions', url: '' },
-      { name: 'My Subscription', url: 'my_subscription' },
+      { name: 'My Subscription', url: 'my_subscriptions' },
     ],
   },
   {

@@ -3,17 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
-import { SubscriptionListItemComponent } from './subscription-list-item/subscription-list-item.component';
-
+import { SubscriptionListItemComponent } from './components/subscription-list-item/subscription-list-item.component';
+import { MySubscriptionComponent } from './my-subscription/my-subscription.component';
 
 @NgModule({
   declarations: [
     SubscriptionsComponent,
-    SubscriptionListItemComponent
+    SubscriptionListItemComponent,
+    MySubscriptionComponent,
   ],
-  imports: [
-    CommonModule,
-    SubscriptionsRoutingModule
-  ]
+  imports: [CommonModule, SubscriptionsRoutingModule],
 })
-export class SubscriptionsModule { }
+export class SubscriptionsModule {}
