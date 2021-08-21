@@ -14,6 +14,15 @@ export const ROUTES: IRoute[] = [
     subSections: [],
   },
   {
+    name: 'Subscription',
+    url: 'subscriptions',
+    icon: 'fa-coins',
+    subSections: [
+      { name: 'Available Subscriptions', url: '' },
+      { name: 'My Subscription', url: 'my_subscription' },
+    ],
+  },
+  {
     name: 'Menus',
     url: 'menu',
     icon: 'fa-file-alt',
@@ -45,14 +54,5 @@ export const ROUTES: IRoute[] = [
     url: 'settings',
     icon: 'fa-cog',
     subSections: [{ name: 'Profile', url: '' }],
-  },
-  {
-    name: 'Subscription',
-    url: 'subscription',
-    icon: 'fa-coins',
-    subSections: [
-      { name: 'My Subscription', url: 'my_subscription' },
-      { name: 'Available Subscriptions', url: 'all_subscription' },
-    ],
   },
 ];

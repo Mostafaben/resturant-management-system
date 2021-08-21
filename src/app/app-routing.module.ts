@@ -14,6 +14,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/menu/menu.module').then((module) => module.MenuModule),
   },
+  {
+    path: 'subscriptions',
+    loadChildren: () =>
+      import('./modules/subscriptions/subscriptions.module').then(
+        (module) => module.SubscriptionsModule
+      ),
+  },
   // {
   //   path: 'clients',
   //   loadChildren: () =>
