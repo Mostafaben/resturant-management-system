@@ -12,7 +12,10 @@
   </div>
 </div>
 <div class="columns is-multiline">
-  <div class="column is-3" *ngFor="let foodItem of food">
+  <div
+    class="column is-3-desktop is-6-tablet is-12-mobile"
+    *ngFor="let foodItem of food"
+  >
     <app-food-menu-card [food]="foodItem"></app-food-menu-card>
   </div>
 </div>

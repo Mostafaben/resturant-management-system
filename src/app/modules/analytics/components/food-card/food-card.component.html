@@ -1,5 +1,5 @@
-<div class="card" [routerLink]="'/menu/' + food.id">
-  <div class="card-image">
+<div class="card">
+  <div class="card-image" [routerLink]="'/menu/' + food.id">
     <figure class="image is-3by2">
       <img [src]="food.imageUrl" [alt]="food.foodName" />
     </figure>
@@ -8,8 +8,8 @@
     <span class="tag is-danger">{{ food.price }} DA</span>
     <div class="media">
       <div class="media-content">
-        <p class="title is-5">{{ food.foodName }}</p>
-        <p class="subtitle is-6">{{ food.category.name }}</p>
+        <p class="title is-6">{{ food.foodName }}</p>
+        <p>{{ food.category.name }}</p>
       </div>
     </div>
     <div class="is-row center-vertical space-between">

@@ -1,21 +1,21 @@
-<div class="columns">
-  <div class="column">
+<div class="columns is-multiline">
+  <div class="column is-3-desktop is-6-tablet is-12-mobile">
     <app-order-statistic-card [item]="item"></app-order-statistic-card>
   </div>
-  <div class="column">
+  <div class="column is-3-desktop is-6-tablet is-12-mobile">
     <app-order-statistic-card [item]="item"></app-order-statistic-card>
   </div>
-  <div class="column">
+  <div class="column is-3-desktop is-6-tablet is-12-mobile">
     <app-order-statistic-card [item]="item"></app-order-statistic-card>
   </div>
-  <div class="column">
+  <div class="column is-3-desktop is-6-tablet is-12-mobile">
     <app-order-statistic-card [item]="item"></app-order-statistic-card>
   </div>
 </div>
 
 <div class="card">
   <header class="card-header">
-    <p class="card-header-title">Clients</p>
+    <p class="card-header-title">Orders</p>
     <div class="card-header-actions">
       <div class="field margin-right">
         <p class="control has-icons-right">
@@ -25,7 +25,7 @@
           </span>
         </p>
       </div>
-      <button class="button is-primary">Filter Users</button>
+      <button class="button is-primary">Filter Orders</button>
     </div>
   </header>
   <div class="card-content">
@@ -71,7 +71,7 @@
             >
           </div>
           <div class="table-item flex-2">
-            {{ order.createdAt | date: "short" }}
+            <p>{{ order.createdAt | date: "short" }}</p>
           </div>
         </div>
         <div
@@ -84,14 +84,16 @@
               class="item is-row center-vertical"
               *ngFor="let food of order.foodItems"
             >
-              <figure class="image is-48x48 margin-right">
+              <figure class="image is-48x48">
                 <img [src]="food.food.imageUrl" alt="food" />
               </figure>
               <strong>{{ food.food.foodName }}</strong>
               <span class="tag is-medium is-info">{{ food.qte }}</span>
             </div>
           </div>
-          <a class="button is-link">View all</a>
+          <a class="button is-link" [routerLink]="order.id.toString()"
+            >View all</a
+          >
         </div>
       </div>
     </div>

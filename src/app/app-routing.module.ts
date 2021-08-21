@@ -14,18 +14,25 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/menu/menu.module').then((module) => module.MenuModule),
   },
-  {
-    path: 'clients',
-    loadChildren: () =>
-      import('./modules/clients/clients.module').then(
-        (module) => module.ClientsModule
-      ),
-  },
+  // {
+  //   path: 'clients',
+  //   loadChildren: () =>
+  //     import('./modules/clients/clients.module').then(
+  //       (module) => module.ClientsModule
+  //     ),
+  // },
   {
     path: 'orders',
     loadChildren: () =>
       import('./modules/orders/orders.module').then(
         (module) => module.OrdersModule
+      ),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./modules/settings/settings.module').then(
+        (module) => module.SettingsModule
       ),
   },
   {

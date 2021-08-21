@@ -1,11 +1,14 @@
-<div class="columns">
-  <div class="column" *ngFor="let item of statistics">
+<div class="columns is-multiline">
+  <div
+    class="column is-3-desktop is-6-tablet is-12-mobile"
+    *ngFor="let item of statistics"
+  >
     <app-statistics-card [item]="item"></app-statistics-card>
   </div>
 </div>
 
 <div class="columns is-multiline">
-  <div class="column is-half">
+  <div class="column is-6-desktop is-12-tablet is-12-mobile">
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">Clients</p>
@@ -15,7 +18,7 @@
       </div>
     </div>
   </div>
-  <div class="column is-half">
+  <div class="column is-6-desktop is-12-tablet is-12-mobile">
     <app-recent-orders-list
       [recentOrders]="recentOrders"
       [orderStates]="orderStates"
@@ -27,8 +30,11 @@
         <p class="card-header-title">Trending Orders</p>
       </header>
       <div class="card-content">
-        <div class="columns">
-          <div class="column is-3" *ngFor="let food of trendingFood">
+        <div class="columns is-multiline">
+          <div
+            class="column is-3-desktop is-6-tablet is-12-mobile"
+            *ngFor="let food of trendingFood"
+          >
             <app-food-card [food]="food"></app-food-card>
           </div>
         </div>

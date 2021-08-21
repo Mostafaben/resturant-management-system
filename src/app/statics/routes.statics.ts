@@ -34,19 +34,16 @@ export const ROUTES: IRoute[] = [
     icon: 'fa-box',
     subSections: [],
   },
-  {
-    name: 'Clients',
-    url: 'clients',
-    icon: 'fa-users',
-    subSections: [],
-  },
+  // {
+  //   name: 'Clients',
+  //   url: 'clients',
+  //   icon: 'fa-users',
+  //   subSections: [],
+  // },
   {
     name: 'Settings',
     url: 'settings',
     icon: 'fa-cog',
-    subSections: [
-      { name: 'Profile', url: '' },
-      { name: 'Theme', url: '' },
-    ],
+    subSections: [{ name: 'Profile', url: '' }],
   },
 ];

@@ -15,8 +15,18 @@
   <figure class="image is-48x48">
     <img class="is-rounded" src="https://picsum.photos/400" alt="" />
   </figure>
-  <div class="user">
+  <div class="user" [matMenuTriggerFor]="menu">
     <p>User Name</p>
     <span>fm_benlagha@esi.dz</span>
   </div>
+  <mat-menu #menu="matMenu">
+    <button routerLink="settings" mat-menu-item class="is-row center-vertical">
+      <i class="fas fa-cog margin-right"></i>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <i class="fas fa-sign-out-alt margin-right"></i>
+      <span>Log out</span>
+    </button>
+  </mat-menu>
 </nav>

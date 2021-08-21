@@ -68,9 +68,23 @@ export const MONTHS = [
   'May',
   'June',
   'July',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
 ];
 
 export const clientsData: any[] = [
+  { count: 65, month: 0 },
+  { count: 59, month: 1 },
+  { count: 80, month: 2 },
+  { count: 81, month: 3 },
+  { count: 56, month: 4 },
+  { count: 55, month: 5 },
+  { count: 40, month: 6 },
   { count: 65, month: 0 },
   { count: 59, month: 1 },
   { count: 80, month: 2 },

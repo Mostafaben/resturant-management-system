@@ -1,0 +1,91 @@
+<div class="columns is-multiline">
+  <div class="column is-7-desktop-is 12-tablet is-12-mobile">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Order Food</p>
+      </header>
+      <div class="card-content">
+        <div class="table">
+          <div class="table-row table-header">
+            <div class="table-item flex-2">Food</div>
+            <div class="table-item center_content">Quantity</div>
+            <div class="table-item flex-2 center_content">Extra</div>
+            <div class="table-item center_content">Price</div>
+          </div>
+          <div class="table-row">
+            <div class="table-item flex-2">
+              <div class="item is-row center-vertical">
+                <figure class="image is-48x48 margin-right">
+                  <img
+                    [src]="'https://picsum.photos/400'"
+                    class="border-radius-4"
+                    alt="food"
+                  />
+                </figure>
+                <div class="is-column center-horizontal">
+                  <strong>{{ "Pizza Fromage" }}</strong>
+                  <span style="color: #888">Pizza</span>
+                </div>
+              </div>
+            </div>
+            <div class="table-item center_content">
+              <span class="tag is-light is-meduim"> 10 </span>
+            </div>
+            <div class="table-item flex-2">
+              <small
+                >Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
+                sint cillum sint consectetur cupidatat.</small
+              >
+            </div>
+            <div class="table-item center_content">
+              <strong>1200 DA</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <div class="is-row center-vertical">
+          <p class="margin-right">Total Price</p>
+          <strong>200040 DA</strong>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="column is-5-desktop is-12-tablet is-12-mobile">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Client Details</p>
+      </header>
+      <div class="card-content">
+        <div class="is-row center-vertical">
+          <figure class="image is-64x64 margin-right">
+            <img
+              [src]="'https://picsum.photos/400'"
+              class="is-rounded"
+              alt="food"
+            />
+          </figure>
+          <div class="is-column center-horizontal">
+            <strong>Benlagha Mostapha</strong>
+            <p>06632454043</p>
+          </div>
+        </div>
+        <p class="margin-vertical">
+          Address:
+          <strong class="margin-left"> Bab-Zouar, Alger Algeria </strong>
+        </p>
+        <p class="margin-vertical">
+          Ordered at:
+          <span class="margin-left">{{ "10/12/2020" | date: "medium" }}</span>
+        </p>
+        <p class="margin-vertical">
+          Status: <span class="margin-left tag is-light">PENDING</span>
+        </p>
+      </div>
+      <footer class="card-footer actions">
+        <button class="button is-light margin-right">Cancel</button>
+        <button class="button is-link">Approve</button>
+      </footer>
+    </div>
+  </div>
+</div>

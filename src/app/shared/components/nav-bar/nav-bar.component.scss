@@ -22,7 +22,7 @@ nav {
   }
   i {
     font-size: 20px;
-    margin: 0px 32px;
+    margin: 0px 24px;
     color: var(--gray);
     cursor: pointer;
   }
@@ -38,4 +38,11 @@ nav {
 
 .full_width {
   left: 0px;
+}
+
+.mat-menu-item {
+  width: 200px;
+  i {
+    color: #888;
+  }
 }

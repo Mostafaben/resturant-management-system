@@ -1,5 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 :root {
   --bg-color: rgb(243, 244, 253);
   --bg-red: rgba(255, 200, 200, 0.5);
@@ -7,9 +7,15 @@
   --side-menu-width: 300px;
 }
 
-p {
+*:not(i) {
   padding: 0px;
   margin: 0px;
+  font-size: 15px;
+  font-family: "cairo" !important;
+}
+
+.label {
+  font-size: 15px;
 }
 
 html,
@@ -69,7 +75,7 @@ i:active {
 
 .is-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
 }
 .center-vertical {
   display: flex;
@@ -86,6 +92,10 @@ i:active {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.border-radius-4 {
+  border-radius: 4px !important;
 }
 
 .flex-1 {
@@ -128,7 +138,18 @@ i:active {
   }
 }
 
-@media only screen and (max-width: 600px) {
+.padding {
+  padding: 20px;
+}
+.padding-vertical {
+  padding: 20px 0px;
+}
+
+.padding-horizontal {
+  padding-inline: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
   .side_menu {
     position: absolute;
     z-index: 10;
@@ -137,7 +158,15 @@ i:active {
       display: block !important;
     }
   }
+  .full_width {
+    margin-left: 0px !important;
+  }
+  nav {
+    left: 0px !important;
+  }
+}
 
+@media only screen and (max-width: 700px) {
   .table-item {
     flex: 4 !important;
   }
@@ -151,10 +180,6 @@ i:active {
     i {
       margin: 0px 10px !important;
     }
-  }
-
-  .full_width {
-    margin-left: 0px !important;
   }
 }
 
@@ -194,3 +219,6 @@ img {
     width: 64px;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
