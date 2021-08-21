@@ -46,4 +46,13 @@ export const ROUTES: IRoute[] = [
     icon: 'fa-cog',
     subSections: [{ name: 'Profile', url: '' }],
   },
+  {
+    name: 'Subscription',
+    url: 'subscription',
+    icon: 'fa-coins',
+    subSections: [
+      { name: 'My Subscription', url: 'my_subscription' },
+      { name: 'Available Subscriptions', url: 'all_subscription' },
+    ],
+  },
 ];

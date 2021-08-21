@@ -4,8 +4,8 @@
     <button class="button is-primary" routerLink="/orders">View All</button>
   </header>
   <div class="card-content">
-    <div class="table">
-      <div class="table-header table-row">
+    <div class="b-table">
+      <div class="table-header table-line">
         <div class="table-item">
           <p>Food Item</p>
         </div>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div
-        class="table-row"
+        class="table-line"
         *ngFor="let order of recentOrders"
         [routerLink]="'/orders/' + order.id"
       >

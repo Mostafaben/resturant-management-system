@@ -1,33 +1,5 @@
-.card_content {
-  transition-duration: 200ms;
-}
-
-.foodItems_container {
-  padding: 20px;
-
-  background-color: whitesmoke;
-
-  .foodItems {
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .item {
-      width: fit-content;
-      img {
-        border-radius: 8px;
-        height: 48px;
-        width: 48px;
-      }
-      padding: 16px;
-      strong {
-        margin-inline: 20px;
-      }
-    }
-  }
-  button {
-    margin-left: auto;
-    width: fit-content;
+.is-48x48 {
+  img {
+    height: 48px;
   }
 }

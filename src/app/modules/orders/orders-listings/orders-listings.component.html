@@ -29,8 +29,8 @@
     </div>
   </header>
   <div class="card-content">
-    <div class="table">
-      <div class="table-row table-header">
+    <div class="b-table">
+      <div class="table-line table-header">
         <div class="table-item flex-2">Client</div>
         <div class="table-item flex-2">Address</div>
         <div class="table-item flex-2">Order</div>
@@ -44,7 +44,7 @@
         *ngFor="let order of orders"
         (click)="expendOrder(order.id)"
       >
-        <div class="table-row">
+        <div class="table-line">
           <div class="table-item flex-2 is-row center-vertical">
             <figure class="image is-64x64 margin-right">
               <img [src]="order.client.imageUrl" class="is-rounded" />
@@ -75,23 +75,23 @@
           </div>
         </div>
         <div
-          class="foodItems_container is-column"
+          class="flex flex-col bg-gray-100 p-4"
           *ngIf="order.id == expendedOrder"
           [@listAnimation]
         >
-          <div class="foodItems">
+          <div class="flex flex-wrap flex-row items-center">
             <div
-              class="item is-row center-vertical"
+              class="flex flex-row items-center mr-5 p-2"
               *ngFor="let food of order.foodItems"
             >
               <figure class="image is-48x48">
-                <img [src]="food.food.imageUrl" alt="food" />
+                <img [src]="food.food.imageUrl" alt="food" class="rounded-md" />
               </figure>
-              <strong>{{ food.food.foodName }}</strong>
+              <strong class="mx-4">{{ food.food.foodName }}</strong>
               <span class="tag is-medium is-info">{{ food.qte }}</span>
             </div>
           </div>
-          <a class="button is-link" [routerLink]="order.id.toString()"
+          <a class="button is-link mt-4" [routerLink]="order.id.toString()"
             >View all</a
           >
         </div>
