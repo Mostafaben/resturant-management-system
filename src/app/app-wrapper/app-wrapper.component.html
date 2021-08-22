@@ -1,0 +1,26 @@
+<app-nav-bar
+  (toggleSideMenu)="toggleSideMenu()"
+  [isSideMenuOpen]="isSideMenuOpen"
+></app-nav-bar>
+<app-side-menu
+  [routes]="ROUTES"
+  [isSideMenuOpen]="isSideMenuOpen"
+  [selectedItem]="sideMenuSelectedItem"
+  (close)="handleCloseSideMenu()"
+></app-side-menu>
+<div
+  class="page_container full_width"
+  [style.marginLeft]="isSideMenuOpen ? '300px' : '0px'"
+>
+  <router-outlet></router-outlet>
+</div>
+<!-- <div class="fixed right-4 bottom-4 z-50 w-1/3 notification-container">
+  <app-notifications
+    [alertType]="alertType.success"
+    message="Food Created Successfully."
+  ></app-notifications>
+  <app-notifications
+    [alertType]="alertType.error"
+    message="Error Creating Food."
+  ></app-notifications>
+</div> -->

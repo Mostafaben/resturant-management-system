@@ -1,0 +1,35 @@
+<div class="flex flex-col h-screen justify-center items-center">
+  <div class="fixed top-0 bg-red-500 overlay"></div>
+  <p class="mb-6 text-white title">Restaurant Management</p>
+  <form class="flex flex-col shadow-md p-5 bg-white rounded-lg">
+    <h1 class="text-2xl mt-1 font-bold text-red-400">Welcome Back,</h1>
+    <p class="my-2 text-gray-400">Login to your account</p>
+
+    <div class="field mt-5">
+      <label class="label">Email</label>
+      <div class="control">
+        <input type="email" class="input" placeholder="email" />
+      </div>
+    </div>
+
+    <div class="field mb-b mt-4">
+      <label class="label">Password</label>
+      <div class="control">
+        <input type="password" class="input" placeholder="password" />
+      </div>
+    </div>
+
+    <span
+      routerLink="/auth/forget_password"
+      class="text-gray-500 text-sm ml-auto mb-3 cursor-pointer"
+      >Forget password ?</span
+    >
+
+    <button
+      class="px-5 py-3 text-white bg-red-400 rounded-md mt-2 w-auto"
+      routerLink="/dashboard"
+    >
+      Sign in
+    </button>
+  </form>
+</div>

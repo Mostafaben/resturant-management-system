@@ -3,8 +3,53 @@
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">My Subscription</p>
+        <span class="tag is-primary is-medium ml-auto">Active</span>
       </header>
-      <div class="card-content"></div>
+      <div class="card-content">
+        <div class="flex flex-row mb-3">
+          <strong>Premium</strong>
+          <p class="ml-auto">
+            <strong> Price </strong>
+            <span class="ml-4">12000.00 DA</span>
+          </p>
+        </div>
+        <div class="flex flex-row mb-3">
+          <p class="mr-auto">
+            <strong> Started at: </strong>
+            <span class="ml-4">{{ "10/20/2201" | date: "short" }}</span>
+          </p>
+          <p>
+            <strong>Finished at:</strong>
+            <span class="ml-4">{{ "10/10/2201" | date: "short" }}</span>
+          </p>
+        </div>
+        <p class="font-bold mb-3">Description</p>
+        <p class="text-gray-600">
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
+          enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
+          exercitation amet. Nisi anim cupidatat excepteur officia.
+          Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate
+          voluptate dolor minim nulla est proident. Nostrud officia pariatur ut
+          officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit
+          commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
+          Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis
+          officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis
+          sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
+          consectetur et est culpa et culpa duis.
+        </p>
+        <div class="relative bg-gray-100 p-4 mt-5 rounded-md">
+          <div class="flex flex-row items-center mb-4">
+            <i class="far fa-hdd text-3xl text-red-400 mr-4"></i>
+            <p>Storage</p>
+          </div>
+          <p class="absolute right-4 top-9 text-gray-800">10/200</p>
+          <mat-progress-bar
+            value="20"
+            mode="determinate"
+            color="warn"
+          ></mat-progress-bar>
+        </div>
+      </div>
       <footer class="card-footer"></footer>
     </div>
   </div>
@@ -13,7 +58,24 @@
       <header class="card-header">
         <p class="card-header-title">History</p>
       </header>
-      <div class="card-content"></div>
+      <div class="card-content">
+        <div class="b-table">
+          <div class="table-line table-header">
+            <div class="table-item">Name</div>
+            <div class="table-item">Price</div>
+            <div class="table-item">Storage</div>
+            <div class="table-item">Duration</div>
+          </div>
+          <div class="table-line">
+            <div class="table-item">
+              <strong> Premium </strong>
+            </div>
+            <div class="table-item">1200 DA</div>
+            <div class="table-item">12</div>
+            <div class="table-item">12 Months</div>
+          </div>
+        </div>
+      </div>
       <footer class="card-footer"></footer>
     </div>
   </div>

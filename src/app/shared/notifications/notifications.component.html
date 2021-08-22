@@ -1,0 +1,31 @@
+<div
+  class="
+    mb-2
+    text-white
+    rounded-md
+    p-5
+    pr-6
+    flex flex-row
+    items-center
+    relative
+  "
+  [class]="alertType == 'SUCCESS' ? 'bg-green-600' : 'bg-red-600'"
+>
+  <i class="fas fa-times absolute right-4 top-4"></i>
+  <i
+    class="
+      icon
+      fas
+      fa-check
+      border border-white
+      rounded-full
+      mr-4
+      flex
+      center_content
+    "
+    [class.fa-times]="alertType == 'ERROR'"
+  ></i>
+  <p>
+    {{ message }}
+  </p>
+</div>

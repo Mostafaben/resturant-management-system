@@ -1,7 +1,9 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">Recent Orders</p>
-    <button class="button is-primary" routerLink="/orders">View All</button>
+    <button class="button is-primary" routerLink="/dashboard/orders">
+      View All
+    </button>
   </header>
   <div class="card-content">
     <div class="b-table">
@@ -19,7 +21,7 @@
       <div
         class="table-line"
         *ngFor="let order of recentOrders"
-        [routerLink]="'/orders/' + order.id"
+        [routerLink]="'/dashboard/orders/' + order.id"
       >
         <div class="table-item is-row center-vertical">
           <figure class="image is-48x48 is-row">

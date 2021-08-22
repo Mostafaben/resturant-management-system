@@ -1,0 +1,19 @@
+.title {
+  z-index: 3;
+}
+form {
+  width: min(400px, 95%);
+  z-index: 3;
+}
+.overlay {
+  transform: rotateZ(10deg);
+  min-width: calc(100vh * 2);
+  height: 80vh;
+  left: -100px;
+  right: -200px;
+  top: -300px;
+
+  z-index: 0;
+  border-bottom-right-radius: 1000px;
+  // border-top-left-radius: 400px;
+}
