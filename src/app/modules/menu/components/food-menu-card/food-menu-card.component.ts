@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IFoodDetails } from 'src/app/shared/interfaces/food.interface';
 
 @Component({
@@ -8,7 +8,16 @@ import { IFoodDetails } from 'src/app/shared/interfaces/food.interface';
 })
 export class FoodMenuCardComponent implements OnInit {
   @Input() food!: IFoodDetails;
-  constructor() {}
+  @Output() deleteFoodEvent: EventEmitter<{ id: number; foodName: string }> =
+    new EventEmitter();
 
+  constructor() {}
   ngOnInit(): void {}
+
+  deleteFood() {
+    this.deleteFoodEvent.emit({
+      id: this.food.id,
+      foodName: this.food.foodName,
+    });
+  }
 }

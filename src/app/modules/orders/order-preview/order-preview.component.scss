@@ -8,3 +8,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.table-line {
+  cursor: default;
+  &:hover {
+    background-color: white;
+  }
+}

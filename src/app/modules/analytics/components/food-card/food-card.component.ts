@@ -8,6 +8,7 @@ import { IFood } from '../../../../shared/interfaces/food.interface';
 })
 export class FoodCardComponent implements OnInit {
   @Input() food!: IFood;
+
   constructor() {}
 
   ngOnInit(): void {}

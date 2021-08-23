@@ -1,0 +1,55 @@
+<div class="card">
+  <header class="card-header">
+    <div class="card-header-title">Orders Income</div>
+
+    <input
+      type="date"
+      class="
+        w-50
+        border border-gray-300
+        rounded-md
+        px-4
+        py-2
+        focus:outline-none
+        focus:ring-2
+        focus:ring-purple-600
+        focus:border-transparent
+      "
+      placeholder="from"
+      [(ngModel)]="from"
+      (ngModelChange)="handleTimeRangeChange()"
+    />
+    <input
+      type="date"
+      class="
+        w-50
+        ml-3
+        border border-gray-300
+        rounded-md
+        px-4
+        py-2
+        focus:outline-none
+        focus:ring-2
+        focus:ring-purple-600
+        focus:border-transparent
+      "
+      placeholder="to"
+      [(ngModel)]="to"
+      (ngModelChange)="handleTimeRangeChange()"
+    />
+  </header>
+  <div class="card-content">
+    <div style="display: block; max-height: 400px">
+      <canvas
+        baseChart
+        height="400"
+        [datasets]="chartConfigs.barChartData"
+        [labels]="chartLabels"
+        [colors]="chartConfigs.barChartColors"
+        [legend]="chartConfigs.barChartLegend"
+        [chartType]="chartConfigs.barChartType"
+        [options]="chartConfigs.chartOptions"
+      ></canvas>
+    </div>
+  </div>
+</div>

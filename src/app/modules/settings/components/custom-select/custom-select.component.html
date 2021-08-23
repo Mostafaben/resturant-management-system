@@ -1,0 +1,42 @@
+<div
+  class="
+    c-select
+    px-4
+    py-3
+    bg-white
+    rounded-md
+    border border-gray-200
+    relative
+    w-60
+  "
+  (click)="toggleOptions()"
+>
+  <span> {{ options[selectedOption] }} </span>
+  <div
+    class="
+      options
+      absolute
+      bg-white
+      right-0
+      left-0
+      flex flex-col
+      z-40
+      rounded-md
+      mt-4
+      border border-gray-200
+      max-h-60
+      overflow-y-auto
+    "
+    *ngIf="isOpen"
+  >
+    <span
+      class="px-4 py-3 hover:bg-blue-400 hover:text-white"
+      [class]="i == selectedOption ? 'font-bold' : ''"
+      *ngFor="let option of options; let i = index"
+      (click)="changeSelectedOption(i)"
+      >{{ option }}</span
+    >
+  </div>
+</div>
+
+<style></style>

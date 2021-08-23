@@ -26,14 +26,10 @@
 $primary: hsl(171, 100%, 41%);
 
 .img_container {
-  height: 200px;
   color: $primary;
-  border-radius: 8px;
   border: 2px dashed $primary;
   transition-duration: 200ms;
   cursor: pointer;
-  margin-bottom: 20px;
-
   &:hover {
     background-color: rgba(245, 245, 245, 0.788);
   }

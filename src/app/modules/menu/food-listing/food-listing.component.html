@@ -16,6 +16,9 @@
     class="column is-3-desktop is-6-tablet is-12-mobile"
     *ngFor="let foodItem of food"
   >
-    <app-food-menu-card [food]="foodItem"></app-food-menu-card>
+    <app-food-menu-card
+      [food]="foodItem"
+      (deleteFoodEvent)="deleteFood($event)"
+    ></app-food-menu-card>
   </div>
 </div>

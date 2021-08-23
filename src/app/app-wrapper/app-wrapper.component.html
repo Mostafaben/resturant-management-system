@@ -14,13 +14,9 @@
 >
   <router-outlet></router-outlet>
 </div>
-<!-- <div class="fixed right-4 bottom-4 z-50 w-1/3 notification-container">
+<div class="fixed right-4 bottom-4 z-50 w-1/3 notification-container">
   <app-notifications
-    [alertType]="alertType.success"
-    message="Food Created Successfully."
+    *ngFor="let alert of alertsState | async"
+    [alert]="alert"
   ></app-notifications>
-  <app-notifications
-    [alertType]="alertType.error"
-    message="Error Creating Food."
-  ></app-notifications>
-</div> -->
+</div>

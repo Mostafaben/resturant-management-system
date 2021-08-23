@@ -9,8 +9,8 @@ export class OrderStatisticCardComponent implements OnInit {
   @Input() item!: {
     title: string;
     count: number;
-    icon: string;
   };
+  @Input() icon!: string;
   constructor() {}
 
   ngOnInit(): void {}

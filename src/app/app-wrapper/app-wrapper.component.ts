@@ -1,8 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import AlertType from '../shared/enums/alerts.enum';
+import IAlert from '../shared/interfaces/alert.interface';
+import { addAlertAction } from '../state/actions/alert.actions';
 import {
   selectMenuItemAction,
   toggleSideMenuAction,
@@ -17,6 +20,7 @@ import { ROUTES } from '../statics/routes.statics';
 })
 export class AppWrapperComponent implements OnInit, OnDestroy {
   private uiState: Observable<IUiState>;
+  public alertsState: Observable<IAlert[]>;
   public alertType = AlertType;
   public isSideMenuOpen: boolean = true;
   public sideMenuSelectedItem: number = 0;
@@ -25,10 +29,11 @@ export class AppWrapperComponent implements OnInit, OnDestroy {
 
   constructor(
     private _store: Store<{ ui: IUiState }>,
-    private _router: Router
+    private _router: Router,
+    private _alertStore: Store<{ alert: IAlert[] }>
   ) {
     this.uiState = this._store.select('ui');
-    console.log(this.uiState);
+    this.alertsState = this._alertStore.select('alert');
     this.handleRouterChange();
   }
 

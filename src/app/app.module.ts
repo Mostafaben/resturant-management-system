@@ -14,6 +14,9 @@ import { SideMenuComponent } from './shared/components/side-menu/side-menu.compo
 import menuReducer from './state/reducers/menu.reducer';
 import uiReducer from './state/reducers/ui.reducer';
 import { NotificationsComponent } from './shared/notifications/notifications.component';
+import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import alertReducer from './state/reducers/alerts.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,7 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
     NavBarComponent,
     AppWrapperComponent,
     NotificationsComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,14 +33,17 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
     MenuModule,
     SettingsModule,
     MatMenuModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
       ui: uiReducer,
       menu: menuReducer,
+      alert: alertReducer,
     }),
   ],
-  exports: [],
+  exports: [ConfirmDialogComponent],
   providers: [],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

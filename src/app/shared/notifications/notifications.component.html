@@ -9,9 +9,9 @@
     items-center
     relative
   "
-  [class]="alertType == 'SUCCESS' ? 'bg-green-600' : 'bg-red-600'"
+  [class]="alert.type == 'SUCCESS' ? 'bg-green-600' : 'bg-red-600'"
 >
-  <i class="fas fa-times absolute right-4 top-4"></i>
+  <i class="fas fa-times absolute right-4 top-4" (click)="dispatchDelete()"></i>
   <i
     class="
       icon
@@ -23,9 +23,9 @@
       flex
       center_content
     "
-    [class.fa-times]="alertType == 'ERROR'"
+    [class.fa-times]="alert.type == 'ERROR'"
   ></i>
   <p>
-    {{ message }}
+    {{ alert.message }}
   </p>
 </div>

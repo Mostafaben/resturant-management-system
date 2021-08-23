@@ -1,0 +1,19 @@
+<div class="card">
+  <header class="card-header">
+    <div class="card-header-title">Top Food</div>
+  </header>
+  <div class="card-content">
+    <div style="display: block; max-height: 500px">
+      <canvas
+        baseChart
+        height="500px"
+        [datasets]="chartConfigs.doughnutChartData"
+        [labels]="labels"
+        [colors]="chartConfigs.doughnutChartColors"
+        [legend]="chartConfigs.doughnutChartLegend"
+        [chartType]="chartConfigs.doughnutChartType"
+        [options]="chartConfigs.chartOptions"
+      ></canvas>
+    </div>
+  </div>
+</div>

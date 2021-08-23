@@ -12,33 +12,37 @@
             <div class="table-item flex-2 center_content">Extra</div>
             <div class="table-item center_content">Price</div>
           </div>
-          <div class="table-line">
+          <div
+            class="hover:bg-white cursor-default table-line"
+            *ngFor="let foodOrderItem of orderFood"
+          >
             <div class="table-item flex-2">
               <div class="item is-row center-vertical">
                 <figure class="image is-48x48 margin-right">
                   <img
-                    [src]="'https://picsum.photos/400'"
+                    [src]="foodOrderItem.food.imageUrl"
                     class="border-radius-4"
                     alt="food"
                   />
                 </figure>
                 <div class="is-column center-horizontal">
-                  <strong>{{ "Pizza Fromage" }}</strong>
-                  <span style="color: #888">Pizza</span>
+                  <strong>{{ foodOrderItem.food.foodName }}</strong>
+                  <span style="color: #888">{{
+                    foodOrderItem.food.category
+                  }}</span>
                 </div>
               </div>
             </div>
             <div class="table-item center_content">
-              <span class="tag is-light is-meduim"> 10 </span>
+              <span class="tag is-light is-meduim">
+                {{ foodOrderItem.quantity }}
+              </span>
             </div>
             <div class="table-item flex-2">
-              <small
-                >Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
-                sint cillum sint consectetur cupidatat.</small
-              >
+              <small>{{ foodOrderItem.extra }}</small>
             </div>
             <div class="table-item center_content">
-              <strong>1200 DA</strong>
+              <strong>{{ foodOrderItem.totalPrice }} DA</strong>
             </div>
           </div>
         </div>
@@ -83,8 +87,12 @@
         </p>
       </div>
       <footer class="card-footer actions">
-        <button class="button is-light margin-right">Cancel</button>
-        <button class="button is-link">Approve</button>
+        <button class="button is-light margin-right" (click)="cancelOrder()">
+          Cancel
+        </button>
+        <button class="button is-link" (click)="upgradeOrderState()">
+          Approve
+        </button>
       </footer>
     </div>
   </div>

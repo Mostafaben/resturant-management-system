@@ -1,19 +1,12 @@
 <div class="columns is-multiline">
   <div class="column is-12">
-    <div class="card">
-      <header class="card-header">
-        <div class="card-header-title">Orders Income</div>
-      </header>
-      <div class="card-content"></div>
-    </div>
+    <app-order-income-chart
+      [data]="incomeData"
+      (timeRangeEvent)="handleTimeChange($event)"
+    ></app-order-income-chart>
   </div>
   <div class="column is-6">
-    <div class="card">
-      <header class="card-header">
-        <div class="card-header-title">Top Food</div>
-      </header>
-      <div class="card-content"></div>
-    </div>
+    <app-top-food-chart></app-top-food-chart>
   </div>
   <div class="column is-6">
     <div class="card">

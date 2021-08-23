@@ -24,10 +24,24 @@ export class OrdersListingsComponent implements OnInit {
   readonly ORDER_STATES = ['pending', 'on process', 'delivered', 'canceled'];
 
   public expendedOrder!: number;
-  public item = {
-    title: 'On the way',
-    icon: 'fa-truck-moving ',
-    count: 17,
+  public statistics = {
+    pending: {
+      title: 'Pending',
+
+      count: 17,
+    },
+    canceled: {
+      title: 'Canceled',
+      count: 10,
+    },
+    done: {
+      title: 'Done',
+      count: 200,
+    },
+    beingDelivered: {
+      title: 'On the way',
+      count: 3,
+    },
   };
   public orders: IOrder[] = orders;
   constructor() {}

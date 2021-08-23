@@ -1,4 +1,7 @@
+p {
+  width: calc(100% - 50px);
+}
 .icon {
-  width: 45px;
-  height: 45px;
+  width: 45px !important;
+  height: 45px !important;
 }

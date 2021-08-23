@@ -1,15 +1,27 @@
 <div class="columns is-multiline">
   <div class="column is-3-desktop is-6-tablet is-12-mobile">
-    <app-order-statistic-card [item]="item"></app-order-statistic-card>
+    <app-order-statistic-card
+      [item]="statistics.pending"
+      icon="fa-pause"
+    ></app-order-statistic-card>
   </div>
   <div class="column is-3-desktop is-6-tablet is-12-mobile">
-    <app-order-statistic-card [item]="item"></app-order-statistic-card>
+    <app-order-statistic-card
+      [item]="statistics.beingDelivered"
+      icon="fa-truck-moving"
+    ></app-order-statistic-card>
   </div>
   <div class="column is-3-desktop is-6-tablet is-12-mobile">
-    <app-order-statistic-card [item]="item"></app-order-statistic-card>
+    <app-order-statistic-card
+      [item]="statistics.done"
+      icon="fa-check"
+    ></app-order-statistic-card>
   </div>
   <div class="column is-3-desktop is-6-tablet is-12-mobile">
-    <app-order-statistic-card [item]="item"></app-order-statistic-card>
+    <app-order-statistic-card
+      [item]="statistics.canceled"
+      icon="fa-window-close"
+    ></app-order-statistic-card>
   </div>
 </div>
 
