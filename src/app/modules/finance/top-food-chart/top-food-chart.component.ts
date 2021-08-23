@@ -18,7 +18,8 @@ export class TopFoodChartComponent implements OnInit {
   public labels: string[] = data.map((value) => value.foodName);
   public data: number[] = data.map((value) => value.count);
   public chartConfigs: any;
-  private _chartColors: string[] = this._createColors(this.data.length);
+  public chartColors: string[] = this._createColors(this.data.length);
+  public percentageData = this._calculatePercentage();
 
   public dataSets = [
     {
@@ -26,10 +27,10 @@ export class TopFoodChartComponent implements OnInit {
       labels: this.labels,
     },
   ];
+
   constructor() {}
   ngOnInit(): void {
-    console.log(this._chartColors);
-
+    console.log(this.chartColors);
     this.chartConfigs = this._configureChart();
   }
 
@@ -43,12 +44,25 @@ export class TopFoodChartComponent implements OnInit {
       .map((color) => color.hex);
   }
 
+  private _calculatePercentage() {
+    let sum = 0;
+    data.forEach(({ count }) => (sum += count));
+    return data.map((value) => ({
+      percentage: Math.floor((value.count / sum) * 100),
+      label: value.foodName,
+    }));
+  }
+
   private _configureChart() {
     return {
-      chartOptions: { responsive: true, maintainAspectRatio: false },
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: { display: false },
+      },
       doughnutChartColors: [
         {
-          backgroundColor: this._chartColors,
+          backgroundColor: this.chartColors,
         },
       ],
       doughnutChartLegend: true,

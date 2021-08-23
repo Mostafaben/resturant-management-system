@@ -5,6 +5,7 @@ import { ChangePasswordDialogComponent } from 'src/app/modules/settings/componen
 import { SubscriptionDetailsDialogComponent } from 'src/app/modules/subscriptions/components/suscription-details-dialog/suscription-details-dialog.component';
 import { addAlertAction } from 'src/app/state/actions/alert.actions';
 import { ConfirmDialogComponent } from '../dialogs/confirm-dialog/confirm-dialog.component';
+import { CreateRegionDialogComponent } from '../dialogs/create-region/create-region.component';
 import AlertType from '../enums/alerts.enum';
 import IAlert from '../interfaces/alert.interface';
 
@@ -49,5 +50,11 @@ export class UiService {
       message,
     };
     this._alertStore.dispatch(addAlertAction({ alert }));
+  }
+
+  openCreateRegionDialog() {
+    return this.dialog.open(CreateRegionDialogComponent, {
+      width: '500px',
+    });
   }
 }

@@ -1,0 +1,30 @@
+<form (submit)="(false)">
+  <div mat-dialog-title>Add Region</div>
+  <div mat-dialog-content>
+    <div class="field">
+      <label class="label">Wilaya</label>
+      <div class="control">
+        <select class="bg-white p-2 border border-gray-200 rounded-md w-full">
+          <option value="0">Wilaya</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Region</label>
+      <div class="control">
+        <input type="text" class="input" placeholder="ex: BabZouar" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Price</label>
+      <div class="control">
+        <input type="number" class="input" placeholder="0 DA" />
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="flex flex-row justify-end">
+    <button class="button is-light mr-4" (click)="onCancel()">Cancel</button>
+    <button class="button is-link" (click)="onConfirm()">Confirm</button>
+  </div>
+</form>

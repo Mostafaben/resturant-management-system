@@ -43,12 +43,12 @@ export const ROUTES: IRoute[] = [
     icon: 'fa-box',
     subSections: [],
   },
-  // {
-  //   name: 'Clients',
-  //   url: 'clients',
-  //   icon: 'fa-users',
-  //   subSections: [],
-  // },
+  {
+    name: 'Delivery',
+    url: 'delivery',
+    icon: 'fa-truck-moving',
+    subSections: [],
+  },
   {
     name: 'Settings',
     url: 'settings',

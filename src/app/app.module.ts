@@ -17,6 +17,7 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
 import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import alertReducer from './state/reducers/alerts.reducer';
+import { CreateRegionDialogComponent } from './shared/dialogs/create-region/create-region.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +26,11 @@ import alertReducer from './state/reducers/alerts.reducer';
     AppWrapperComponent,
     NotificationsComponent,
     ConfirmDialogComponent,
+    CreateRegionDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AnalyticsModule,
-    MenuModule,
-    SettingsModule,
     MatMenuModule,
     MatDialogModule,
     BrowserAnimationsModule,
@@ -43,7 +42,7 @@ import alertReducer from './state/reducers/alerts.reducer';
   ],
   exports: [ConfirmDialogComponent],
   providers: [],
-  entryComponents: [ConfirmDialogComponent],
+  entryComponents: [ConfirmDialogComponent, CreateRegionDialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

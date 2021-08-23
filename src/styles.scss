@@ -22,6 +22,11 @@
   font-size: 15px;
 }
 
+.no-hover-action:hover {
+  background-color: white !important;
+  cursor: default !important;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

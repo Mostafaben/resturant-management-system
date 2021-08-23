@@ -29,6 +29,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'delivery',
+        loadChildren: () =>
+          import('./modules/delivery/delivery.module').then(
+            (module) => module.DeliveryModule
+          ),
+      },
+      {
         path: 'orders',
         loadChildren: () =>
           import('./modules/orders/orders.module').then(
