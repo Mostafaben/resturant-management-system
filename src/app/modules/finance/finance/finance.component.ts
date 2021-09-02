@@ -15,7 +15,5 @@ export class FinanceComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleTimeChange(event: { from: IDate | null; to: IDate | null }) {
-    console.log(event);
-  }
+  handleTimeChange(event: { from: IDate | null; to: IDate | null }) {}
 }

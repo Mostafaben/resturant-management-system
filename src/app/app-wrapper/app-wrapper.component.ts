@@ -1,11 +1,9 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Event, NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import AlertType from '../shared/enums/alerts.enum';
 import IAlert from '../shared/interfaces/alert.interface';
-import { addAlertAction } from '../state/actions/alert.actions';
 import {
   selectMenuItemAction,
   toggleSideMenuAction,
@@ -34,7 +32,9 @@ export class AppWrapperComponent implements OnInit, OnDestroy {
   ) {
     this.uiState = this._store.select('ui');
     this.alertsState = this._alertStore.select('alert');
-    this.handleRouterChange();
+    this._eventSubscription$ = this._router.events.subscribe(
+      this.handleRouterChange
+    );
   }
 
   ngOnInit(): void {
@@ -44,13 +44,11 @@ export class AppWrapperComponent implements OnInit, OnDestroy {
     });
   }
 
-  handleRouterChange() {
-    this._eventSubscription$ = this._router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const index = ROUTES.findIndex(({ url }) => event.url.includes(url));
-        this._store.dispatch(selectMenuItemAction({ selectedItem: index }));
-      }
-    });
+  handleRouterChange(event: Event) {
+    if (event instanceof NavigationEnd) {
+      const index = ROUTES.findIndex(({ url }) => event.url.includes(url));
+      this._store.dispatch(selectMenuItemAction({ selectedItem: index }));
+    }
   }
   toggleSideMenu() {
     this._store.dispatch(

@@ -48,7 +48,7 @@ export class TopFoodChartComponent implements OnInit {
     let sum = 0;
     data.forEach(({ count }) => (sum += count));
     return data.map((value) => ({
-      percentage: Math.floor((value.count / sum) * 100),
+      percentage: ((value.count / sum) * 100).toFixed(2),
       label: value.foodName,
     }));
   }

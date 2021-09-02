@@ -1,8 +1,8 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 :root {
   --bg-color: rgb(243, 244, 253);
@@ -59,7 +59,6 @@ body {
   padding: 20px;
   padding-top: 84px;
   height: 100vh;
-
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -185,7 +184,7 @@ i:active {
     }
   }
   .full_width {
-    margin-left: 0px !important;
+    margin-left: 82px !important;
   }
   nav {
     left: 0px !important;

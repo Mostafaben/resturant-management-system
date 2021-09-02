@@ -3,20 +3,20 @@
     <div class="card-header-title">Top Food</div>
   </header>
   <div class="card-content relative">
-    <div class="flex flex-row justify-evenly m-4">
+    <div class="flex flex-row justify-evenly m-4 flex-wrap">
       <div
         class="flex flex-row"
         *ngFor="let item of percentageData; let i = index"
       >
         <span
-          class="tag is-danger text-white font-bold mr-4"
+          class="tag is-danger text-white font-bold mr-4 mb-4"
           [style]="'background-color: ' + chartColors[i]"
           >{{ item.percentage }}%</span
         >
         <small>{{ item.label }}</small>
       </div>
     </div>
-    <div style="display: block; max-height: 500px">
+    <div style="display: block; max-height: 400px">
       <canvas
         baseChart
         height="500px"

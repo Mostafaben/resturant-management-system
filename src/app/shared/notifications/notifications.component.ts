@@ -8,29 +8,23 @@ import IAlert from '../interfaces/alert.interface';
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
-  animations: [
-    trigger('inOutAnimation', [
-      transition(':enter', [
-        style({ transform: 'translateY(-40px)' }),
-        animate('200ms', style({ transform: 'translateY(0)', opacity: 0 })),
-      ]),
-      transition(':leave', [
-        style({ transform: 'translateX(0)' }),
-        animate('200ms', style({ transform: 'translateY(100px)' })),
-      ]),
-    ]),
-  ],
 })
 export class NotificationsComponent implements OnInit {
   @Input() alert!: IAlert;
+  public isClosing: boolean = false;
   readonly TIME_OUT = 5000;
+
   constructor(private _alertsStore: Store<{ alert: IAlert[] }>) {
     this._alertsStore.select('alert');
   }
 
   dispatchDelete() {
-    this._alertsStore.dispatch(removeAlertAction({ id: this.alert.id }));
+    this.isClosing = true;
+    setTimeout(() => {
+      this._alertsStore.dispatch(removeAlertAction({ id: this.alert.id }));
+    }, 300);
   }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.dispatchDelete();

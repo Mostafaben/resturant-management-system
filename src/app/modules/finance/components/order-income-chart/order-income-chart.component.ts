@@ -52,6 +52,10 @@ export class OrderIncomeChartComponent implements OnInit {
           data: this.chartData,
           label: 'Orders Income',
         },
+        {
+          data: this.chartData,
+          label: 'Delivery Payments',
+        },
       ],
     };
   }
